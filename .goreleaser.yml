@@ -15,7 +15,6 @@ dockers:
     image_templates:
     - "gianarb/kube-aws-node-labeler:latest"
     - "gianarb/kube-aws-node-labeler:{{ .Tag }}"
-    - "gianarb/kube-aws-node-labeler:v{{ .Major }}"
     skip_push: false
     # Path to the Dockerfile (from the project root).
     dockerfile: Dockerfile

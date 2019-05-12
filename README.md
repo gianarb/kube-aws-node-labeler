@@ -7,14 +7,26 @@ new node joins the cluster. If the node has the label
 tags from AWS. Specifically it looks for instance tags like:
 
 ```
-kubernetes/aws-labeler/label/<labelName>=<labelValue>
+kubernetes/aws-labeler/label/type=ci
 ```
 If the EC2 has this tag the Kubernetes node will have a label called
 
 ```
-awslabeler.com/type=frontend
+awslabeler.com/type=ci
 ```
 That you can use to schedule your pods.
+
+Other than labels it also support taints:
+
+AWS EC2 tags like:
+```
+kubernetes/aws-labeler/taint/type=ci:NoExecute
+```
+Will become:
+
+```
+awslabeler.com/type=ci:NoExecute
+```
 
 ## Build
 
